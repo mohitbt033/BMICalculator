@@ -17,7 +17,7 @@ def bmiConversion():
     height = input['height']
     name = input['name']
     ConversionResult = conversion(weight,height)
-    url = "http://0.0.0.0:"
+    url = "http://127.0.0.1:"
     port1 = 5001
     payload = json.dumps({
         "weight": ConversionResult["weight"],
@@ -32,4 +32,4 @@ def bmiConversion():
     return(jsonify({"result": str(name) + " you are " + str(next_response["category"])}))
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0',port = 5000, debug= True)
+    app.run(port = 5000, debug= True)
