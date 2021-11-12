@@ -15,7 +15,7 @@ def bmiCalculation():
     weight = input['weight']
     height = input['height']
     BMIResult = BMI(weight,height)
-    url = "http://0.0.0.0:"
+    url = "http://127.0.0.1:"
     port1 = 5002
     payload = json.dumps({
         "bmi": BMIResult["bmi"]
@@ -29,4 +29,4 @@ def bmiCalculation():
     return(jsonify({"category":next_response["category"]}))
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0',port = 5001, debug= True)
+    app.run(port = 5001, debug= True)
